@@ -1324,6 +1324,12 @@ convert_whole_realm_to_feudalism_effect = {
 					}
 				}
 				set_holding_type = church_holding
+
+				# Temple template: monastery
+				if = {
+					limit = { has_holding_type = church_holding }
+					if = { limit = { free_building_slots > 0 } add_building = monastic_schools_01 }					
+				}
 			}
 			hidden_effect = {
 				if = {
@@ -1408,6 +1414,12 @@ convert_whole_realm_to_feudalism_effect = {
 						}
 					}
 					set_holding_type = city_holding
+
+					# City template: guild
+					if = {
+						limit = { has_holding_type = city_holding }
+						if = { limit = { free_building_slots > 0 } add_building = guild_halls_01 }						
+					}
 				}
 			}
 			hidden_effect = {
@@ -1493,6 +1505,12 @@ convert_whole_realm_to_feudalism_effect = {
 						}
 					}
 					set_holding_type = church_holding
+
+					# Temple template: monastery
+					if = {
+						limit = { has_holding_type = church_holding }
+						if = { limit = { free_building_slots > 0 } add_building = monastic_schools_01 }					
+					}
 				}
 			}
 			hidden_effect = {
@@ -1530,19 +1548,40 @@ convert_whole_realm_to_feudalism_effect = {
 			set_holding_type = castle_holding
 
             if = {
-                limit = { has_holding_type = castle_holding }
-                if = {
-                    limit = { free_building_slots > 0 }
-                    add_random_fortification_building_effect = yes
-                }
-                if = { limit = { free_building_slots > 0 } add_building = smiths_01 }
-                if = { limit = { free_building_slots > 0 } add_random_economic_building_effect = yes }
-            }
+				limit = { has_holding_type = castle_holding }
 
-            while = {
-                limit = { free_building_slots > 0 }
-                add_random_economic_building_effect = yes
-            }
+				# Fort chosen by terrain
+				if = { limit = { free_building_slots > 0 } add_random_fortification_building_effect = yes }
+
+				# Blacksmith
+				if = { limit = { free_building_slots > 0 } add_building = smiths_01 }
+
+				# Prioritized economic candidates: port, manor (farm_estates), orchards
+				if = {
+					limit = { free_building_slots > 0 }
+					if = {
+						limit = { building_common_tradeport_requirement_terrain = yes NOT = { has_building_or_higher = common_tradeport_01 } }
+						add_building = common_tradeport_01
+					}
+					else_if = {
+						limit = { building_farm_estates_requirement_terrain = yes NOT = { has_building_or_higher = farm_estates_01 } }
+						add_building = farm_estates_01
+					}
+					else_if = {
+						limit = { building_orchards_requirement_terrain = yes NOT = { has_building_or_higher = orchards_01 } }
+						add_building = orchards_01
+					}
+					else = {
+						add_random_economic_building_effect = yes
+					}
+				}
+			}
+
+			# Fill remaining slots with econ buildings
+			while = {
+				limit = { free_building_slots > 0 }
+				add_random_economic_building_effect = yes
+			}
 
 			remove_from_list = feudal_conversion
 			hidden_effect = {
