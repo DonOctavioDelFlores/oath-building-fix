@@ -180,8 +180,7 @@
 					scope:target.title_province = {
 						set_holding_type = castle_holding
 						# CHANGED: populate the new castle with buildings
-						if = { limit = { free_building_slots > 0 } add_random_fortification_building_effect = yes }
-						if = { limit = { free_building_slots > 0 } add_building = smiths_01 }
+						if = { limit = { free_building_slots > 0 } add_random_fortification_building_effect = yes }						
 						if = {
 							limit = { free_building_slots > 0 }
 							if = {
@@ -198,6 +197,7 @@
 							}
 							else = { add_random_economic_building_effect = yes }
 						}
+						if = { limit = { free_building_slots > 0 } add_building = smiths_01 }
 						while = {
 							limit = { free_building_slots > 0 }
 							count = 10
@@ -690,8 +690,7 @@ support_feudalize_tribal_holding_interaction = {
 							scope:target.title_province = {
 								set_holding_type = castle_holding
 								# CHANGED: populate the new castle with buildings
-								if = { limit = { free_building_slots > 0 } add_random_fortification_building_effect = yes }
-								if = { limit = { free_building_slots > 0 } add_building = smiths_01 }
+								if = { limit = { free_building_slots > 0 } add_random_fortification_building_effect = yes }								
 								if = {
 									limit = { free_building_slots > 0 }
 									if = {
@@ -708,6 +707,7 @@ support_feudalize_tribal_holding_interaction = {
 									}
 									else = { add_random_economic_building_effect = yes }
 								}
+								if = { limit = { free_building_slots > 0 } add_building = smiths_01 }
 								while = {
 									limit = { free_building_slots > 0 }
 									count = 10

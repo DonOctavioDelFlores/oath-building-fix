@@ -1551,10 +1551,7 @@ convert_whole_realm_to_feudalism_effect = {
 				limit = { has_holding_type = castle_holding }
 
 				# Fort chosen by terrain
-				if = { limit = { free_building_slots > 0 } add_random_fortification_building_effect = yes }
-
-				# Blacksmith
-				if = { limit = { free_building_slots > 0 } add_building = smiths_01 }
+				if = { limit = { free_building_slots > 0 } add_random_fortification_building_effect = yes }				
 
 				# Prioritized economic candidates: port, manor (farm_estates), orchards
 				if = {
@@ -1575,6 +1572,9 @@ convert_whole_realm_to_feudalism_effect = {
 						add_random_economic_building_effect = yes
 					}
 				}
+
+				# Blacksmith
+				if = { limit = { free_building_slots > 0 } add_building = smiths_01 }
 			}
 
 			# Fill remaining slots with econ buildings
