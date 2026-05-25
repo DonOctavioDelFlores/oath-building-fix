@@ -1580,6 +1580,7 @@ convert_whole_realm_to_feudalism_effect = {
 			# Fill remaining slots with econ buildings
 			while = {
 				limit = { free_building_slots > 0 }
+				count = 10  # hard cap
 				add_random_economic_building_effect = yes
 			}
 
