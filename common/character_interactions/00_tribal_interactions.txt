@@ -705,6 +705,10 @@ support_feudalize_tribal_holding_interaction = {
 										limit = { building_orchards_requirement_terrain = yes NOT = { has_building_or_higher = orchards_01 } }
 										add_building = orchards_01
 									}
+									else_if = {
+										limit = { building_outposts_requirement_terrain = yes NOT = { has_building_or_higher = outposts_01 } }
+										add_building = orchards_01
+									}									
 									else = { add_random_economic_building_effect = yes }
 								}
 								if = { limit = { free_building_slots > 0 } add_building = smiths_01 }
