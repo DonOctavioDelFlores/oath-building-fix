@@ -1300,6 +1300,11 @@ convert_whole_realm_to_feudalism_effect = {
 		
 		every_sub_realm_county = { # Spawn temples in your holy sites
 			limit = {
+				OR = {
+					culture = { has_innovation = innovation_city_planning }      # Land culture
+					root.culture = { has_innovation = innovation_city_planning } # Your culture
+					holder.culture = { has_innovation = innovation_city_planning } # Vassal's culture
+				}
 				any_county_province = {
 					has_holding_type = tribal_holding
 				}
@@ -1345,6 +1350,11 @@ convert_whole_realm_to_feudalism_effect = {
 		
 		every_sub_realm_county = { # Spawn a City
 			limit = {
+				OR = {
+					culture = { has_innovation = innovation_city_planning }      # Land culture
+					root.culture = { has_innovation = innovation_city_planning } # Your culture
+					holder.culture = { has_innovation = innovation_city_planning } # Vassal's culture
+				}
 				any_county_province = {
 					has_holding_type = tribal_holding
 				}
@@ -1436,6 +1446,11 @@ convert_whole_realm_to_feudalism_effect = {
 		
 		every_sub_realm_county = { # Spawn a Temple
 			limit = {
+				OR = {
+					culture = { has_innovation = innovation_city_planning }      # Land culture
+					root.culture = { has_innovation = innovation_city_planning } # Your culture
+					holder.culture = { has_innovation = innovation_city_planning } # Vassal's culture
+				}
 				any_county_province = {
 					has_holding_type = tribal_holding
 				}
