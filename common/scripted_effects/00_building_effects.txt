@@ -2619,6 +2619,7 @@ add_random_economic_building_effect = {
 		random_list = {
 			10 = { # Caravanserai
 				trigger = {
+					is_county_capital = yes
 					NOT = { has_building_or_higher = caravanserai_01 }
 					building_caravanserai_requirement_terrain = yes
 					building_requirement_castle_city_church = { LEVEL = 01 }
@@ -2630,6 +2631,7 @@ add_random_economic_building_effect = {
 			}
 			10 = { # Watermills
 				trigger = {
+					is_county_capital = yes
 					NOT = { has_building_or_higher = watermills_01 }
 					building_watermills_requirement_terrain = yes
 					building_requirement_castle_city_church = { LEVEL = 01 }
@@ -2641,6 +2643,7 @@ add_random_economic_building_effect = {
 			}
 			10 = { # Windmills
 				trigger = {
+					is_county_capital = yes
 					NOT = { has_building_or_higher = windmills_01 }
 					building_windmills_requirement_terrain = yes
 					building_requirement_castle_city_church = { LEVEL = 01 }
