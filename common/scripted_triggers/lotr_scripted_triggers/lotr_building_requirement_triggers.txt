@@ -312,12 +312,8 @@ lotr_orc_or_nurniag_buildings = {
 			# The ultimate ruler of the realm must also be evil-faithed
 			# and must be a Nazgul or Maia.
 			top_liege = {
-				faith_is_evil = yes
-
-				OR = {
-					is_nazgul = yes
-					is_maiar = yes
-				}
+                cannot_be_killed = yes
+				faith_is_evil = yes				
 			}
 		}
 	}
